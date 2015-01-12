@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Angular UI</title>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
+	<style>
+		.ng-invalid.ng-dirty{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body ng-app="MyApp">
+	<div ng-controller="MainController">
+		<form name="myForm">
+		<p><input name="password" ng-model="password" required /></p>
+		<p><input name="confirmpassword" ng-model="confirmpassword" required ui-validate='"validatePassword($value)"' ui-validate-watch='"password"' /></p>
+		<p><button ng-disabled="!myForm.$valid">Submit</button></p>
+		</form>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
