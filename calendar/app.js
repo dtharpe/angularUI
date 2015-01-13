@@ -1,4 +1,4 @@
-angular.module('MyApp', [])
+angular.module('MyApp', ['ui.calendar'])
 	.controller('MainController', function($scope){
 		 var events = [
             { title: "Mom's Birthday", start: new Date(2014, 8, 10) },
@@ -7,4 +7,13 @@ angular.module('MyApp', [])
         ];
 
         $scope.eventSources = [events];
+
+				$scope.calOptions = {
+						editable: true,
+						header: {
+							left: 'prev',
+							center:"title",
+							right: "next"
+						}
+				};
 });

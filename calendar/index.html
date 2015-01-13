@@ -7,7 +7,9 @@
 
 <body ng-app="MyApp">
 	<div ng-controller="MainController">
-		{{msg}}
+		<div class="calendar" ui-calendar="calOptions" ng-model="eventSources">
+
+		</div>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

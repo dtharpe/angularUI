@@ -6,7 +6,7 @@ angular.module('MyApp', ['ngRoute', 'ui.route'])
         });
 
         $locationProvider.html5Mode(true);
-     
+
     })
     .controller('MainController', function ($scope) {
         $scope.routes = ['/route-1', '/route-2', '/route-3'];

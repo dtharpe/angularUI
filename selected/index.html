@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Angular UI</title>
+	<link href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link href="bower_components/angular-ui-select/dist/css/select.min.css" />
+</head>
+
+<body ng-app="MyApp">
+	<div ng-controller="MainController">
+			<ui-select ng-model="employee.selected" theme="bootstrap">
+
+				<ui-select-match placeholder="Select a Name">
+					{{$select.selected.name}}
+				</ui-select-match>
+
+				<ui-select-choices repeat="e in employees | filter: $select.search">
+					{{e.name}} , {{e.email}}
+				</ui-select-choices>
+
+			</ui-select>
+
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-select/dist/select.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
